@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_code_inspe_0.CodeInspector</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Search functions for the "Code Inspector" App&#13;
+by Dirk Redeker - Hacktober / 2021</description>
+        <name>CodeInspector</name>
+        <script><![CDATA[/*
+
+Autor: Dirk Rekeker
+Date:  Hacktober 2021
+Name:  CodeInspector
+Value: Finds Search Keywords throughout your instance
+
+*/
+
+var CodeInspector = Class.create();
+CodeInspector.prototype = {
+    initialize: function() {
+    },
+
+	
+	// this will execute one given CodeSearch definition
+	executeCodeSearch: function(current, CodeSearch_sys_id) {
+		var lastTablename = "";                    // Stores the last searched tablename (helper variable in the Loop)
+		
+		var searchKeyword = current.search_keyword;
+
+		current.status                   = 'Running';
+		current.last_executed_on         = gs.nowDateTime();
+		current.last_executed_by         = gs.getUserName();
+		current.last_exection_ended      = gs.nowDateTime();
+		current.update();
+		
+		// first, clear previous search results on current
+		this._clearCurrentSearchResults();
+		
+		
+		// get the dictionary records to find fields in tables to be searched
+		var gr_dict = new GlideRecord('sys_dictionary');
+
+		// exclude the Dictionary Records starting with "var__m_"
+		// (supposed there are no tables like "my_tablevar__m_" containing this magic string)
+		gr_dict.addQuery('name', 'DOES NOT CONTAIN', 'var__m_');
+		
+		// exclude the tables from THIS App !!
+		gr_dict.addQuery('name', 'DOES NOT CONTAIN', 'x_snc_code_inspe_0');
+		
+		// depending on setting of the CodeSearchDefintion Record:
+		var encStr = "";
+
+		// a) search keyword in fields of data type "script"
+		if (current.fields_of_type_script == true) {
+			encStr += 'internal_type=script';
+		}
+
+		// b) search keyword in fields of data type "script_plain"
+		if (current.fields_of_type_script_plain == true) {
+			if (encStr.length > 0) {
+				encStr += '^OR';
+			}
+			encStr += 'internal_type=script_plain';
+		}
+
+		// c) search keyword in fields of data type "script_server"
+		if (current.fields_of_type_script_server == true) {
+			if (encStr.length > 0) {
+				encStr += '^OR';
+			}
+			encStr += 'internal_type=script_server';
+		}
+
+		// a) search keyword in fields of data type "String"
+		if (current.fields_of_type_string == true) {
+			if (encStr.length > 0) {
+				encStr += '^OR';
+			}
+			encStr += 'internal_type=string';
+		}
+		
+		// SAFTEY, if NO selection was done (for hazzard)
+		// In this case, limit searches to fields of type "script"
+		if (encStr.length == 0) {
+			encStr = 'internal_type=script';
+		}
+
+		// Add the "OR-ed" list of field types to search in to the Query
+		gr_dict.addEncodedQuery(encStr);
+
+//		gs.addErrorMessage(encStr);
+		
+		// limit to given tables
+//		gr_dict.addQuery('name', 'sc_request');
+//		gr_dict.addQuery('name', 'wf_activity');
+//		gr_dict.addQuery('name', 'sys_variable_value');
+		
+		// if checkbox is NOT set, exclude the system fields
+		if (current.include_system_fields == false) {
+//			gr_dict.addQuery('element', '!=', 'sys_created_on');
+//			gr_dict.addQuery('element', '!=', 'sys_updated_on');
+		}
+		
+		
+
+		// Sort all Dictionary Records found by table-name
+		gr_dict.orderBy('name');
+
+
+		// This will execute the query to find all Dictionary records for searching
+		// each Dictionary record points to a table/field combination to be searched
+		gr_dict.query();
+
+		
+		// update the "CodeSearchDefinition" Record to reflect the total number of Dictionary records found
+		current.dictionaries_found = 0;          //gr_script.getRowCount();
+		current.fields_searched    = 0;
+		current.tables_searched    = 0;
+		current.record_hits_found  = 0;
+		current.update();
+
+		
+		
+		// LOOP through all found Dictionary records (table/field combination)
+		var i = 0;
+		while (gr_dict.next()) {
+			i++;
+
+			current.dictionaries_found = current.dictionaries_found + 1;
+			current.fields_searched    = current.fields_searched    + 1;
+			current.update();
+
+//			gs.info(i + ': Table: ' + gr_dict.name.getDisplayValue() + ' / ' + 'Field: ' + gr_dict.element + ' / '
+//					+ 'Label: ' + gr_dict.column_label + ' / Scope: ' + gr_dict.sys_scope);
+
+			// Search the table (sys_dictionary.name) found in the Dictionary record
+			var gr_script = new GlideRecord(gr_dict.name.getDisplayValue());
+
+			// Search the field (sys_dictionary.element) found in the Dictionary record
+			//  gr_script.addQuery(gr_dict.element, 'CONTAINS', 'CheckWhereScriptIncludeIsUsed');
+
+			// Search conditions to search for the given "Search Keyword"
+			//var orCond = gr_script.addQuery(gr_dict.element, 'CONTAINS', current.u_search_keyword);
+			// orCond.addOrCondition(gr_dict.element, 'CONTAINS', ' kb ');
+
+//			gr_script.addQuery(gr_dict.element, 'CONTAINS', current.u_search_keyword);
+			gr_script.addQuery(gr_dict.element, 'CONTAINS', searchKeyword);
+			
+			if (1 == 1) {
+				
+			}
+			
+			// ... restrict results to only records set to "Active" = "true"
+			if (current.only_active_records == true) {
+				gr_script.addActiveQuery();
+			}
+
+			//  var queryWords = ['CheckWhereScriptIncludeIsUsed', 'Class']
+			//  gr_script.addQuery(gr_dict.element, 'CONTAINS', queryWords);
+			//  gr_script.addQuery(gr_dict.element, 'IN', queryWords);
+
+
+			// Execute the Query to search for the given Keyword in all records of the table/field combination
+			// found in the current "gr_dict" record
+			gr_script.query();
+
+			
+			
+
+			// LOOP through all search hits
+			j = 0;
+			while (gr_script.next()) {
+				j++;
+				// Später ausgabe als "Hyperlink", um direkt zu dem Objekt zu springen !
+				// Achtung: Kann es doppelte REcords aufgrund von "Class" Inheritance geben? => ggf. berücksichtigen!!!
+				gs.info(j + ': Found in table "' + gr_dict.name + '" in the record "' + gr_script.getDisplayValue() + '" / '
+						+ 'SysID-Table:' + gr_dict.sys_id + ' / ' + 'SysID-Record:' + gr_script.sys_id + ' / Class: ' + 'gr_script.class');
+				
+				var gr_found = new GlideRecord('codesearchrecordhit');
+				gr_found.initialize();
+				gr_found.codesearch_definition = current.sys_id;
+				gr_found.codesearch_table      = '';
+				gr_found.table                 = gr_dict.name;
+				gr_found.field_name            = gr_dict.element;
+				gr_found.field_label           = gr_dict.getValue('column_label');
+				gr_found.hit_sys_id            = gr_script.sys_id;
+				gr_found.record_displayvalue   = gr_script.getDisplayName();
+				gr_found.field_type            = gr_dict.internal_type;
+
+				if (current.copy_script == true) {
+					gr_found.script            = gr_script.getValue(gr_dict.element);
+				} else {
+					gr_found.script            = '-- copy script switch was not selected / no script was copied --';
+				}
+				gr_found.table_class           = gr_script.getClassDisplayValue();
+				// %2F = "/"
+				// %3F = "?"
+				// %3D = "="
+				gr_found.url_to_open_record    = 'nav_to.do?uri=/' + gr_dict.name +  '.do?sys_id=' + gr_script.sys_id;
+				
+				gr_found.insert();
+				
+				current.record_hits_found   = current.record_hits_found + 1;
+				current.last_exection_ended = gs.nowDateTime();
+				current.update();
+				
+			}
+			// Summary
+			
+			if (j == 0) {
+				gs.info('No Record match found in table "' + gr_dict.name + '"');
+			} else {
+				gs.info(j + ' Record(s) match found in table "' + gr_dict.name + '"');
+			}
+
+			// Check, if table already was added during this execution
+			if (lastTablename != gr_dict.name.toString()) {
+				// Write a record to the databas table "CodeSearchTable"
+				var gr_table = new GlideRecord('codesearchtable');
+				gr_table.initialize();
+				gr_table.codesearch_definition    = current.sys_id;
+				gr_table.table                    = gr_dict.name;
+				gr_table.records_hit              = j;
+				gr_table.searched_fields          = gr_dict.element;
+
+				gr_table.insert();
+				
+				current.tables_searched    = current.tables_searched + 1;
+				current.update();
+
+			} else {
+				gr_table.searched_fields          = gr_table.searched_fields + ',' + gr_dict.element;
+				gr_table.update();
+			}
+				
+			lastTablename = gr_dict.name.toString();
+
+		}
+
+		current.status                   = 'Ready';
+		current.last_execution_ended     = gs.nowDateTime();
+		current.last_execution_duration  = current.last_execution_ended - current.last_executed_on;
+		current.update();
+
+	},   // end "executeCodeSearch"
+	
+
+	
+	
+	// #####################################################################################################################
+
+	
+	
+	// Clear the previous search results, to fill up with new search result records afterwards
+	_clearCurrentSearchResults: function() {
+
+		var gr_table = new GlideRecord('codesearchtable');
+		gr_table.query();
+		gr_table.deleteMultiple();
+		
+		var gr_found = new GlideRecord('codesearchrecordhit');
+		gr_found.query();
+		gr_found.deleteMultiple();
+		
+
+		
+	}, // end "_clearCurrentSearchResults"
+	
+	
+	
+	// Copy gr_dict Search Results to Archive, for later comparing for DELTA-Reporting
+	_archiveCurrentSearchResults: function() {
+		
+	}, // end "_archiveCurrentSearchResults"
+
+	
+		
+	
+	
+	
+    type: 'CodeInspector'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-10-16 07:10:15</sys_created_on>
+        <sys_id>d8220564875334909d6a43f80cbb3521</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CodeInspector</sys_name>
+        <sys_package display_value="CODE INSPECTOR" source="x_snc_code_inspe_0">cee67024871334909d6a43f80cbb3547</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CODE INSPECTOR">cee67024871334909d6a43f80cbb3547</sys_scope>
+        <sys_update_name>sys_script_include_d8220564875334909d6a43f80cbb3521</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-10-16 07:10:15</sys_updated_on>
+    </sys_script_include>
+</record_update>

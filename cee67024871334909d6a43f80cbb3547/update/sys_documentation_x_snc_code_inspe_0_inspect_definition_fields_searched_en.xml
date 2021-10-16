@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="fields_searched" label="Fields searched" language="en" table="x_snc_code_inspe_0_inspect_definition">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>fields_searched</element>
+            <help/>
+            <hint/>
+            <label>Fields searched</label>
+            <language>en</language>
+            <name>x_snc_code_inspe_0_inspect_definition</name>
+            <plural>Fields searched</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 06:42:41</sys_created_on>
+            <sys_id>2fbdf86c871334909d6a43f80cbb353f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Fields searched</sys_name>
+            <sys_package display_value="CODE INSPECTOR" source="x_snc_code_inspe_0">cee67024871334909d6a43f80cbb3547</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CODE INSPECTOR">cee67024871334909d6a43f80cbb3547</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_code_inspe_0_inspect_definition_fields_searched_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 06:42:41</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

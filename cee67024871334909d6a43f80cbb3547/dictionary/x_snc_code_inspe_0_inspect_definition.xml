@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="Inspect Definition" max_length="40" name="x_snc_code_inspe_0_inspect_definition" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Application Scope" max_length="4000" name="application_scope" type="glide_list"/>
+        <element label="Category" max_length="40" name="category" type="string"/>
+        <element label="Copy Script" max_length="40" name="copy_script" type="boolean"/>
+        <element label="Description" max_length="4000" name="description" type="string"/>
+        <element label="Dictionaries found" max_length="40" name="dictionaries_found" read_only="true" type="integer"/>
+        <element default="true" label="Fields of Type Script" max_length="40" name="fields_of_type_script" type="boolean"/>
+        <element label="Fields of Type Script_Plain" max_length="40" name="fields_of_type_script_plain" type="boolean"/>
+        <element label="Fields of Type Script_Server" max_length="40" name="fields_of_type_script_server" type="boolean"/>
+        <element label="Fields of Type String" max_length="40" name="fields_of_type_string" type="boolean"/>
+        <element label="Fields searched" max_length="40" name="fields_searched" read_only="true" type="integer"/>
+        <element label="Groups" max_length="4000" name="groups" type="glide_list"/>
+        <element label="Include system fields" max_length="40" name="include_system_fields" type="boolean"/>
+        <element label="Last executed by" max_length="40" name="last_executed_by" read_only="true" type="string"/>
+        <element label="Last executed on" max_length="40" name="last_executed_on" read_only="true" type="glide_date_time"/>
+        <element label="Last execution duration" max_length="40" name="last_execution_duration" read_only="true" type="glide_duration"/>
+        <element label="Last execution ended" max_length="40" name="last_execution_ended" read_only="true" type="glide_date_time"/>
+        <element label="Name" mandatory="true" max_length="200" name="name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Only active records" max_length="40" name="only_active_records" type="boolean"/>
+        <element label="Owner" max_length="40" name="owner" type="string"/>
+        <element label="Progress" max_length="200" name="progress" read_only="true" type="string"/>
+        <element label="Records created by" max_length="40" name="records_created_by" type="string"/>
+        <element label="Records created FROM" max_length="40" name="records_created_from" type="glide_date_time"/>
+        <element label="Records created UNTIL" max_length="40" name="records_created_until" type="glide_date_time"/>
+        <element label="Records updated by" max_length="40" name="records_updated_by" type="string"/>
+        <element label="Records updated FROM" max_length="40" name="records_updated_from" type="glide_date_time"/>
+        <element label="Records updated UNTIL" max_length="40" name="records_updated_until" type="glide_date_time"/>
+        <element label="Record hits found" max_length="40" name="record_hits_found" read_only="true" type="integer"/>
+        <element label="Search Keyword" mandatory="true" max_length="200" name="search_keyword" type="string_full_utf8"/>
+        <element label="Search tables" max_length="4000" name="search_tables" read_only="true" type="glide_list"/>
+        <element label="Status" max_length="50" name="status" read_only="true" type="string"/>
+        <element label="Tables searched" max_length="40" name="tables_searched" read_only="true" type="integer"/>
+        <element label="Table limitation" max_length="40" name="table_limitation" type="string"/>
+    </element>
+</database>

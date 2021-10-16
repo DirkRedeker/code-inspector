@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Inspect Definition" section_id="a6188d6c875334909d6a43f80cbb3528" sys_domain="global" table="x_snc_code_inspe_0_inspect_definition" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>copy_script</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>9f4a0960879334909d6a43f80cbb351c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>fields_of_type_script</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>174a0960879334909d6a43f80cbb351d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>fields_of_type_script_plain</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>9b4a0960879334909d6a43f80cbb351d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>fields_of_type_script_server</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>134a0960879334909d6a43f80cbb351e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>fields_of_type_string</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>974a0960879334909d6a43f80cbb351e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>only_active_records</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>1f4a0960879334909d6a43f80cbb351e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>include_system_fields</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>934a0960879334909d6a43f80cbb351f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>1b4a0960879334909d6a43f80cbb351f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>groups</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>9f4a0960879334909d6a43f80cbb351f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>records_created_by</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>174a0960879334909d6a43f80cbb3520</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>records_created_from</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>9b4a0960879334909d6a43f80cbb3520</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>records_created_until</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>134a0960879334909d6a43f80cbb3521</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>records_updated_by</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>974a0960879334909d6a43f80cbb3521</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>records_updated_from</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>1f4a0960879334909d6a43f80cbb3521</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>records_updated_until</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:37:34</sys_created_on>
+            <sys_id>934a0960879334909d6a43f80cbb3522</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Inspect Definition" display_value="Inspect Definition" name="x_snc_code_inspe_0_inspect_definition" sys_domain="global" view="Default view">a6188d6c875334909d6a43f80cbb3528</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:37:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Inspect Definition</caption>
+            <header>false</header>
+            <name>x_snc_code_inspe_0_inspect_definition</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-10-16 07:27:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a6188d6c875334909d6a43f80cbb3528</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_code_inspe_0_inspect_definition</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="CODE INSPECTOR" source="x_snc_code_inspe_0">cee67024871334909d6a43f80cbb3547</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CODE INSPECTOR">cee67024871334909d6a43f80cbb3547</sys_scope>
+            <sys_update_name>sys_ui_section_a6188d6c875334909d6a43f80cbb3528</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-10-16 07:27:57</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
